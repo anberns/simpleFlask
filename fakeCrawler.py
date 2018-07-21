@@ -1,18 +1,19 @@
-import asyncio
-import websockets
+#import asyncio
+#import websockets
+from flask_sockets import Sockets
 import datetime
 import random
-'''
-async def crawl():
-	#open socket
 
+def crawl(ws):
+	#open socket
+	ws.send("hello world")
+'''
 	async with websockets.connect("ws://127.0.0.1:8001") as websocket:
 		#send data
 		await websocket.send("Hello world!")
 
 asyncio.get_event_loop().run_until_complete(
 	crawl())
-'''
 def crawl():
 	async def time(websocket, path):
 		while True:
@@ -24,3 +25,4 @@ def crawl():
 
 	asyncio.get_event_loop().run_until_complete(start_server)
 	asyncio.get_event_loop().run_forever()
+'''
