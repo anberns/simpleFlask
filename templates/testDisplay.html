@@ -3,7 +3,9 @@
 	<body>
 		<p>Test Display</p>
 		<script>
-			var ws = new WebSocket("ws://https://mysterious-springs-48423.herokuapp.com:443/"),
+			var host = location.origin.replace(/^http/, 'ws');
+			console.log(host);
+			var ws = new WebSocket(host),
                 messages = document.createElement('ul');
             ws.onmessage = function (event) {
                 var messages = document.getElementsByTagName('ul')[0],
