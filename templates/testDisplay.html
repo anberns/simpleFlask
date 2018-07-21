@@ -3,7 +3,7 @@
 	<body>
 		<p>Test Display</p>
 		<script>
-			var ws = new WebSocket("ws://mysterious-springs-48423.herokuapp.com:8002/"),
+			var ws = new WebSocket("ws://https://mysterious-springs-48423.herokuapp.com:443/"),
                 messages = document.createElement('ul');
             ws.onmessage = function (event) {
                 var messages = document.getElementsByTagName('ul')[0],
