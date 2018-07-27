@@ -17,14 +17,14 @@ def index():
 @app.route('/testSubmit', methods=['POST'])
 def launch():
 	global userId, url, limit, sType, keyword
-	url = "https://" + request.form['url']
-	limit = request.form['limit']
-	sType = request.form['type']
-	keyword = request.form['keyword']
-	session['url'] = "http://www.nytimes.com" #url
-	session['limit'] = 5 #limit
-	session['sType'] = "dfs" #sType
-	session['keyword'] = None #keyword
+	url = "https://www.nytimes.com" #"https://" + request.form['url']
+	limit = 4 #request.form['limit']
+	sType = "dfs" #request.form['type']
+	keyword = None #request.form['keyword']
+	session['url'] = url
+	session['limit'] = limit
+	session['sType'] = sType
+	session['keyword'] = keyword
 
 	#load display page
 	return render_template("testDisplay.html")
