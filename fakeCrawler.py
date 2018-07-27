@@ -3,10 +3,13 @@
 from flask_sockets import Sockets
 import datetime
 import random
+import time
 
 def crawl(ws):
-	#open socket
-	ws.send("hello world")
+
+	for i in range(0,25):
+		time.sleep(random.randint(0,2))
+		ws.send("link")
 '''
 	async with websockets.connect("ws://127.0.0.1:8001") as websocket:
 		#send data

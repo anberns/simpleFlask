@@ -3,6 +3,7 @@ from flask_sockets import Sockets
 import os
 import fakeCrawler
 import time
+import random
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
@@ -21,10 +22,8 @@ def launch():
 
 @sockets.route('/crawl')
 def startCrawl(ws):
-	while True:
-		time.sleep(1)
-		#ws.send("Hello world")
-		fakeCrawler.crawl(ws)
+
+	fakeCrawler.crawl(ws)
 
 if __name__ == "__main__":
 	app.run()
