@@ -38,6 +38,7 @@ def startCrawl(ws):
 	limit = session['limit']
 	sType = session['sType']
 	keyword = session['keyword']
+	time.sleep(2)
 	crawler.crawl(ws, url, int(limit), sType, keyword)
 if __name__ == "__main__":
 	app.run()
