@@ -34,11 +34,10 @@ def startCrawl(ws):
 
 	#fakeCrawler.crawl(ws)
 	global userId, url, limit, sType, keyword
-	url = session['url']
-	limit = session['limit']
-	sType = session['sType']
-	keyword = session['keyword']
-	time.sleep(2)
+	url = "https://www.nytimes.com" #"https://" + request.form['url']
+	limit = 4 #request.form['limit']
+	sType = "dfs" #request.form['type']
+	keyword = None #request.form['keyword']
 	crawler.crawl(ws, url, int(limit), sType, keyword)
 if __name__ == "__main__":
 	app.run()
