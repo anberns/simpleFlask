@@ -25,7 +25,7 @@ def launch():
 def startCrawl(ws):
 
 	#fakeCrawler.crawl(ws)
-	crawler.crawl(ws, "http://www.apple.com", 6, "dfs", "keyword")
+	crawler.crawl(ws, "http://www.apple.com", 6, "dfs", None)
 
 if __name__ == "__main__":
 	app.run()
