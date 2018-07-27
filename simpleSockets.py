@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from flask_sockets import Sockets
 import os
 import fakeCrawler
@@ -7,7 +7,7 @@ import time
 import random
 
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
+app.secret_key = os.urandom(24)
 sockets = Sockets(app)
 
 @app.route('/')
@@ -21,6 +21,10 @@ def launch():
 	limit = request.form['limit']
 	sType = request.form['type']
 	keyword = request.form['keyword']
+	session['url'] = url
+	session['limit'] = limit
+	session['sType'] = sType
+	session['keyword'] = keyword
 
 	#load display page
 	return render_template("testDisplay.html")
