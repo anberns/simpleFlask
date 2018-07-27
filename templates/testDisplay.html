@@ -15,6 +15,12 @@
                 message.appendChild(content);
                 messages.appendChild(message);
             };
+			ws.onopen = function() {
+				console.log("socket connected");
+			};
+			ws.onclose = function(event) {
+				console.log("socket closed");
+			};
             document.body.appendChild(messages);
 		</script>
 	</body>
