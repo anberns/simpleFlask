@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect
 from flask_sockets import Sockets
 import os
 import fakeCrawler
+import crawler
 import time
 import random
 
@@ -23,7 +24,8 @@ def launch():
 @sockets.route('/crawl')
 def startCrawl(ws):
 
-	fakeCrawler.crawl(ws)
+	#fakeCrawler.crawl(ws)
+	crawler.crawl(ws, "http://www.apple.com", 6, "dfs", "keyword")
 
 if __name__ == "__main__":
 	app.run()
