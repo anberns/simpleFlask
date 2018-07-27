@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, request
 from flask_sockets import Sockets
 import os
 import fakeCrawler
@@ -16,7 +16,11 @@ def index():
 
 @app.route('/testSubmit', methods=['POST'])
 def launch():
-
+	global userId, url, limit, sType, keyword
+	url = "https://" + request.form['url']
+	limit = request.form['limit']
+	sType = request.form['type']
+	keyword = request.form['keyword']
 
 	#load display page
 	return render_template("testDisplay.html")
@@ -25,8 +29,8 @@ def launch():
 def startCrawl(ws):
 
 	#fakeCrawler.crawl(ws)
-	crawler.crawl(ws, "http://www.apple.com", 6, "dfs", None)
-
+	global userId, url, limit, sType, keyword
+	crawler.crawl(ws, url, int(limit), sType, keyword)
 if __name__ == "__main__":
 	app.run()
 

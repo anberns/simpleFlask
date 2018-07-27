@@ -260,7 +260,7 @@ def crawl(ws, url, limit, sType, keyword):
 	'''
 
 	if sType == "dfs":
-		#random.seed(time.time())
+		random.seed(time.time())
 		print("DFS on " + url)
 		crawler = DFS(url, limit, keyword)
 		try:
