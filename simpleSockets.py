@@ -21,10 +21,10 @@ def launch():
 	limit = request.form['limit']
 	sType = request.form['type']
 	keyword = request.form['keyword']
-	session['url'] = url
-	session['limit'] = limit
-	session['sType'] = sType
-	session['keyword'] = keyword
+	session['url'] = "http://www.nytimes.com" #url
+	session['limit'] = 5 #limit
+	session['sType'] = "dfs" #sType
+	session['keyword'] = None #keyword
 
 	#load display page
 	return render_template("testDisplay.html")
