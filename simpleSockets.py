@@ -15,10 +15,6 @@ def index():
 @app.route('/testSubmit', methods=['POST'])
 def launch():
 
-	#launch fake crawler
-	if not os.fork():
-		return redirect('/crawl')
-		#fakeCrawler.crawl()
 
 	#load display page
 	return render_template("testDisplay.html")

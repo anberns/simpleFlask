@@ -3,7 +3,7 @@
 	<body>
 		<p>Test Display</p>
 		<script type="text/javascript">
-			var host = "wss://" + location.host + "/crawl";
+			var host = "ws://" + location.host + "/crawl";
 			console.log(host);
 			var ws = new WebSocket(host),
                 messages = document.createElement('ul');
